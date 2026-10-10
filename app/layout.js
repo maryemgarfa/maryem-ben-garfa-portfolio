@@ -6,8 +6,8 @@ const ui = Inter({ subsets: ['latin'], variable: '--ui' })
 const hand = Caveat({ subsets: ['latin'], variable: '--hand' })
 const ar = Cairo({ subsets: ['arabic', 'latin'], variable: '--ar' })
 
-// Favicon : petit cœur pixel (SVG intégré, aucun fichier à ajouter)
-const heart = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 8' shape-rendering='crispEdges'><path fill='#a259ff' d='M1 0h2v1H1zM6 0h2v1H6zM0 1h4v1H0zM5 1h4v1H5zM0 2h9v2H0zM1 4h7v1H1zM2 5h5v1H2zM3 6h3v1H3zM4 7h1v1H4z'/></svg>"
+// Favicon : logo </> en pixels (SVG intégré, aucun fichier à ajouter)
+const heart = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='-1 0 19 8' shape-rendering='crispEdges'><path fill='#a259ff' d='M3 0h2v1h-2zM9 0h2v1h-2zM12 0h2v1h-2zM2 1h2v1h-2zM9 1h2v1h-2zM13 1h2v1h-2zM1 2h2v1h-2zM8 2h2v1h-2zM14 2h2v1h-2zM0 3h2v1h-2zM8 3h2v1h-2zM15 3h2v1h-2zM0 4h2v1h-2zM7 4h2v1h-2zM15 4h2v1h-2zM1 5h2v1h-2zM7 5h2v1h-2zM14 5h2v1h-2zM2 6h2v1h-2zM6 6h2v1h-2zM13 6h2v1h-2zM3 7h2v1h-2zM6 7h2v1h-2zM12 7h2v1h-2z'/></svg>"
 
 export const metadata = {
   title: 'Maryem Ben Garfa — Software Engineer | Full-Stack & E-commerce Developer',
@@ -15,5 +15,5 @@ export const metadata = {
   icons: { icon: 'data:image/svg+xml,' + encodeURIComponent(heart) },
 }
 export default function RootLayout({ children }) {
-  return <html lang="fr" data-theme="dark"><body className={`${px.variable} ${sans.variable} ${ui.variable} ${hand.variable} ${ar.variable}`}>{children}</body></html>
+  return <html lang="fr" data-theme="dark" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: "try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('rv-on')}catch(e){}" }} /></head><body className={`${px.variable} ${sans.variable} ${ui.variable} ${hand.variable} ${ar.variable}`}>{children}</body></html>
 }

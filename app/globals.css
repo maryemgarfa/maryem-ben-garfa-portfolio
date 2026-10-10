@@ -236,3 +236,22 @@ footer p{margin:0 0 4px}
 .tools button{font-family:var(--sg),sans-serif;font-size:.88rem}
 .time b a.orglink{display:inline-flex;align-items:center;gap:6px;padding:2px 12px;font-family:var(--sg),sans-serif;font-size:.84rem;font-weight:500;line-height:1.5;text-decoration:none;color:var(--hl);background:var(--panel);clip-path:var(--cut);box-shadow:inset 0 0 0 2px var(--edge);transition:box-shadow .15s,color .15s}
 .time b a.orglink:hover{color:var(--ink);box-shadow:inset 0 0 0 2px var(--ac)}
+
+/* ----- Animation d'apparition au scroll (classe « rv-on » posée par un petit script dans layout.js ; désactivée si « réduire les animations ») ----- */
+.rv-on [data-rv]:not(.in){opacity:0;translate:0 26px}
+.rv-on [data-rv].in{animation:rvIn .75s cubic-bezier(.2,.7,.2,1) var(--d,0s) both}
+@keyframes rvIn{from{opacity:0;translate:0 26px}to{opacity:1;translate:0 0}}
+
+/* ----- Hero : les 2 boutons restent sur la même ligne ----- */
+.hero .row{flex-wrap:nowrap;gap:10px}
+.hero .row .btn{padding:10px 14px;font-size:.8rem;white-space:nowrap;gap:8px}
+@media(max-width:420px){.hero .row{flex-wrap:wrap}}
+
+/* ----- Lien « ESPRIT » dans la ligne de formation ----- */
+.info span a.inline{font-weight:600;color:var(--hl);text-decoration:underline;text-decoration-color:var(--ac);text-underline-offset:3px}
+.info span a.inline:hover{color:var(--ink)}
+
+/* ----- Mobile : section « À propos » → titre et texte d'abord, puis l'image ----- */
+@media(max-width:700px){
+  .about-txt{order:1}.about .frame{order:2}.about .info{order:3}.about .motto{order:4}
+}
