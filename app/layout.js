@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next'
 import { Silkscreen, Pixelify_Sans, Cairo, Inter, Caveat } from 'next/font/google'
 import './globals.css'
 const px = Silkscreen({ weight: ['400', '700'], subsets: ['latin'], variable: '--px' })
@@ -15,5 +16,5 @@ export const metadata = {
   icons: { icon: 'data:image/svg+xml,' + encodeURIComponent(heart) },
 }
 export default function RootLayout({ children }) {
-  return <html lang="fr" data-theme="dark" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: "try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('rv-on')}catch(e){}" }} /></head><body className={`${px.variable} ${sans.variable} ${ui.variable} ${hand.variable} ${ar.variable}`}>{children}</body></html>
+  return <html lang="fr" data-theme="dark" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: "try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('rv-on')}catch(e){}" }} /></head><body className={`${px.variable} ${sans.variable} ${ui.variable} ${hand.variable} ${ar.variable}`}>{children}<Analytics /></body></html>
 }

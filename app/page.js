@@ -6,7 +6,7 @@ import { Icon, PixelArt, CODE, CODE_PAL, CODE_PINK } from '../components/Icons'
 const Scene = dynamic(() => import('../components/Scene'), { ssr: false })
 const MiniIsland = dynamic(() => import('../components/MiniIsland'), { ssr: false })
 const IDS = ['top', 'about', 'projets', 'competences', 'parcours', 'contact']
-const TECH = { wordpress: 'WordPress', prestashop: 'PrestaShop', react: 'React', shopify: 'Shopify' }
+const TECH = { wordpress: 'WordPress', prestashop: 'PrestaShop', react: 'React', shopify: 'Shopify', webapp: 'Web App' }
 const CTX = ['all', ...Object.keys(TECH).filter(k => PROJECTS.some(p => p.tech === k))]
 
 // Miniature d'un projet : sans image (ou image absente/cassée), on affiche le logo Pixel Art à la place
